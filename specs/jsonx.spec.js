@@ -34,4 +34,15 @@ describe('Given JSONX has been loaded the environment.', function() {
         });
     });
 
+    describe('when a JSON document has an array', function () {
+        var jsonDocument = {
+            foos : ['bar', 'baz', 'bingo']
+        };
+        var xmlDocument = '<foos><bar><baz></foos>'
+
+        it('should ', function () {
+
+        });
+    });
+
 });
