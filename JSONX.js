@@ -6,6 +6,7 @@ var library =
                 
         if(obj !== null && obj !== undefined) {
             if(typeof obj === 'Array') {
+                alert('array');
                 for(var i=0; i<obj.length;i++) {
                     content += stringify(obj[i]);
                 }
