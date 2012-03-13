@@ -4,13 +4,20 @@ var library =
         var content = '',
             attributes = '';
                 
-        if(obj !== null && obj !== undefined && typeof obj === 'object') {
-            for(var prop in obj) {
-                if(obj.hasOwnProperty(prop)) {
-                    if(prop.match(/^@/) == '@'){
-                        attributes += ' ' + prop.substr(1) + '=\"' + obj[prop] + '\"'; 
-                    } else {
-                        content += stringify(obj[prop], prop);                        
+        if(obj !== null && obj !== undefined) {
+            if typeof obj === 'Array' {
+                for(var i=0; i<obj.length;i++) {
+                    content += stringify(obj[i]);
+                }
+            }
+            else if(typeof obj === 'object') {
+                for(var prop in obj) {
+                    if(obj.hasOwnProperty(prop)) {
+                        if(prop.match(/^@/) == '@'){
+                            attributes += ' ' + prop.substr(1) + '=\"' + obj[prop] + '\"'; 
+                        } else {
+                            content += stringify(obj[prop], prop);                        
+                        }
                     }
                 }
             }
