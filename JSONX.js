@@ -5,7 +5,7 @@ var library =
             attributes = '';
                 
         if(obj !== null && obj !== undefined && typeof obj === 'object') {
-            if(obj instanceof 'Array') {
+            if(obj instanceof Array) {
                 for(var i=0; i<obj.length;i++) {
                     content += stringify(obj[i]);
                 }
