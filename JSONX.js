@@ -4,13 +4,12 @@ var library =
         var content = '',
             attributes = '';
                 
-        if(obj !== null && obj !== undefined) {
+        if(obj !== null && obj !== undefined && typeof obj === 'object') {
             if(obj instanceof 'Array') {
                 for(var i=0; i<obj.length;i++) {
                     content += stringify(obj[i]);
                 }
-            }
-            else if(typeof obj === 'object') {
+            } else {
                 for(var prop in obj) {
                     if(obj.hasOwnProperty(prop)) {
                         if(prop.match(/^@/) == '@'){
