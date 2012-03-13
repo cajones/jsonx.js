@@ -24,7 +24,7 @@ var library =
         } else {
             content = obj.toString();
         }
-        return '<' + rootName + attributes + '>' + content + '</' + rootName + '>';
+        return rootName ? '<' + rootName + attributes + '>' + content + '</' + rootName + '>' : content;
     };
     container.stringify = stringify;
     return container;
